@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,height=device-height initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+	<title>Document</title>
+	<script src="./lib/jquery-1.11.3.js"></script>
+	<style>
+		html,body,ul,li{
+			margin: 0;
+			padding: 0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		ul.box{
+			width:100%;
+			height: 960px;
+			position: relative;
+			background: #000;
+		}
+		ul.box li{
+			position: absolute;
+		}
+		ul.box li img{
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<ul class="box">
+		
+	</ul>
+</body>
+<script>
+	var imgArr = ["<li class='1x1'><img src='./img/(1).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(2).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(3).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(4).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(5).jpg' alt='' /></li>","<li class='2x2'><img src='./img/(6).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(7).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(8).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(9).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(10).jpg' alt='' /></li>","<li class='2x2'><img src='./img/(11).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(12).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(13).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(14).jpg' alt='' /></li>","<li class='2x2'><img src='./img/(15).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(16).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(17).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(18).jpg' alt='' /></li>","<li class='3x3'><img src='./img/(19).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(20).jpg' alt='' /></li>","<li class='2x2'><img src='./img/(21).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(22).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(23).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(24).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(25).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(26).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(27).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(28).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(29).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(30).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(31).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(32).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(33).jpg' alt='' /></li>","<li class='2x2'><img src='./img/(34).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(35).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(36).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(37).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(38).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(39).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(40).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(41).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(42).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(43).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(44).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(45).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(46).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(47).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(48).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(49).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(50).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(51).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(52).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(53).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(54).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(55).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(56).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(57).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(58).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(59).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(60).jpg' alt='' /></li>","<li class='2x2'><img src='./img/(61).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(62).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(63).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(64).jpg' alt='' /></li>"];
+	for(var img = 0;img < imgArr.length; img++){
+		$(".box").append(imgArr[img]);
+	}
+
+	imgList()
+
+	window.onresize=function(){
+		$('li').css({display:'block'});
+		imgList()
+	}
+
+	function imgList(){
+
+		var minImg               = 160,
+			screenWidth  		 = $('.box').width(),    // 盒子的宽度
+			screenHeight 		 = $('.box').height(),	 // 盒子的高度 
+		    minSizeImageFitCount = Math.floor(screenWidth / minImg),    // 表示一行多少个最小图片
+		    sizeToFitCount 		 = screenWidth / minSizeImageFitCount,   // 每张图的实际大小
+		    rowSizeImage         = Math.floor(screenHeight / minImg);	  // 图片的列数 
+
+		var yIdx = 0,
+			xIdx = 0,
+			wentThrough = {};
+
+		var list = $('li');
+
+		for(var i = 0;i< list.length; i++){
+
+			if(0 == (xIdx % minSizeImageFitCount) && xIdx != 0){
+				xIdx = 0;
+				yIdx ++;
+			}
+
+	 		var nowClass = $(list[i]).attr('class').split('x');
+	 		var nowSizeX = parseInt(nowClass[0])
+
+			if(wentThrough[xIdx + 'x' + yIdx]){			// 判断 wentThrough 对象  是否存在 xIdx + 'x' + yIdx  属性(存在则表示 此格子已被占用) 
+				xIdx ++ ;	
+				i--;		
+				continue;
+			}
+
+	 		if(nowSizeX == 2){							// 判断 当前位置 是否 放得下 2x2 的图片  放不下则舍弃掉  放下一张
+
+		 		if(wentThrough[xIdx + 'x' + yIdx] || wentThrough[(xIdx+1) + 'x' + yIdx]){
+		 			$(list[i]).css({display:'none'});
+		 			continue;
+		 		}
+	 		}
+
+	 		if(nowSizeX == 3){							// 判断 当前位置 是否 放得下 2x2 的图片  放不下则舍弃掉  放下一张
+
+		 		if(wentThrough[xIdx + 'x' + yIdx] || wentThrough[(xIdx+1) + 'x' + yIdx] || wentThrough[(xIdx+2) + 'x' + yIdx]){
+		 			$(list[i]).css({display:'none'});
+		 			continue;
+		 		}
+	 		}
+
+
+	 		switch($(list[i]).attr('class')){
+	 			case "Normal":
+	 				break;
+	 			default:
+	 				var area  = $(list[i]).attr('class').split('x');
+	 				var	areaX = parseInt(area[0]);
+	 				var areaY = parseInt(area[1]);  // 图片的宽高
+	 				//  areaY 图片高度  yIdx 累积的高度  areaX图片的宽度  xIdx图片累积的宽度
+	 				if((areaX+xIdx) > minSizeImageFitCount || (areaY+yIdx) > rowSizeImage){
+	 					$(list[i]).css({display:'none'});
+	 					continue;
+	 				}else{
+	 					for(y = areaY-1; y>=0 ; y--){
+	 						for(x = areaX-1; x>=0; x--){
+	 							wentThrough[(x + xIdx) + 'x' + (y + yIdx)] = areaX+"x"+areaY;	//  对象 添加 属性  	表示 图片 所占的位置
+	 						}
+	 					}
+	 					
+	 				}
+
+	 				
+	 				$(list[i]).css({width:areaX*sizeToFitCount,height:areaY*sizeToFitCount});
+	 				break;
+	 		}
+
+	 		$(list[i]).css({top:(yIdx*sizeToFitCount),left:(xIdx*sizeToFitCount)});
+	 		xIdx ++;
+		}
+	}	
+</script>
+</html>

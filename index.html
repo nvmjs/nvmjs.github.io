@@ -1,115 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<script src="./lib/jquery-1.11.3.js"></script>
-	<style>
-		html,body,ul,li{
-			margin: 0;
-			padding: 0;
-		}
-		ul,li{
-			list-style: none;
-		}
-		ul.box{
-			width:100%;
-			min-height: 960px;
-			position: relative;
-			background: #000;
-		}
-		ul.box li{
-			position: absolute;
-		}
-		ul.box li img{
-			width: 100%;
-			height: 100%;
-			display: block;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="wid	th=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>notes</title>
+  <link rel="stylesheet" href="./lib/css/init.css">
+  <link rel="stylesheet" href="./lib/css/font.css">
+  <link rel="stylesheet" href="./lib/css/index.css">  
+  <script type="text/javascript" src="./lib/js/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="./lib/js/rivets.js"></script>
+
 </head>
-<body>
-	<ul class="box">
-		
-	</ul>
+<body
+	<div class="header">
+		<div class="header-inner">
+			<span class="iconfont icon-github"></span>
+			<input name="search" type="text" placeholder='search'>
+			<span id ="search" class="search">Search</span>
+			<span id ="refresh" class="search">Refresh</span>
+			<span class="fn-right">Welcome to my notes</span>
+		</div>
+	</div>
+	<div class="box">
+		<div class="list">
+			<div class="title">
+				<span fn-left>关键字搜索</span>
+			</div>
+			<div class="inner">
+				<div class="name">
+					<span>fis3</span>
+					<span>node</span>
+					<span>webpack</span>
+					<span>git</span>
+					<span>rivets</span>	
+					<span>css</span>
+					<span>js</span>
+					<span>mobiscroll</span>
+					<span>react</span>
+					<span>MobaXterm</span>		
+				</div>
+				
+			</div>
+		</div>	
+		<div class="list" rv-each-list="items.content">
+			<div class="title">
+			<span class="fn-left" rv-inner="list.title"></span>
+			<i class="fn-right">{list.time}</i>	
+			</div>
+			<div class="inner" rv-inner="list.inner">{list.inner}</div>
+		</div>		
+	</div>
+	<script type="text/javascript" src="./lib/js/index.js"></script>
 </body>
-<script>
-	var imgArr = ["<li class='1x1'><img src='./img/(1).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(2).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(3).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(4).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(5).jpg' alt='' /></li>","<li class='2x2'><img src='./img/(6).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(7).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(8).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(9).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(10).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(11).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(12).jpg' alt='' /></li>","<li class='2x2'><img src='./img/(13).jpg' alt='' /></li>","<li class='3x3'><img src='./img/(14).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(15).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(16).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(17).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(18).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(19).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(20).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(21).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(22).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(23).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(24).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(25).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(26).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(27).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(28).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(29).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(30).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(31).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(32).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(33).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(34).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(35).jpg' alt='' /></li>","<li class='1x1'><img src='./img/(36).jpg' alt='' /></li>"];
-	for(var img = 0;img < imgArr.length; img++){
-		$(".box").append(imgArr[img]);
-	}	 
-
-	var minImg               = 160,
-		screenWidth  		 = $('.box').width(),    // 盒子的宽度
-		screenHeight 		 = $('.box').height(),	 // 盒子的高度 
-	    minSizeImageFitCount = Math.floor(screenWidth / minImg),    // 表示一行多少个最小图片
-	    sizeToFitCount 		 = screenWidth / minSizeImageFitCount;   // 每张图的实际大小
-	var yIdx = 0,
-		xIdx = 0,
-		wentThrough = {};
-
-	var list = $('li');
-
-	for(var i = 0;i< list.length; i++){
-
-		if(0 == (xIdx % minSizeImageFitCount) && xIdx != 0){
-			xIdx = 0;
-			yIdx ++;
-		}
-
- 		var nowClass = $(list[i]).attr('class').split('x');
- 		var nowSizeX = parseInt(nowClass[0])
-
-		if(wentThrough[xIdx + 'x' + yIdx]){			// 判断 wentThrough 对象  是否存在 xIdx + 'x' + yIdx  属性(存在则表示 此格子已被占用) 
-			xIdx ++ ;	
-			i--;		
-			continue;
-		}
-
- 		if(nowSizeX == 2){							// 判断 当前位置 是否 放得下 2x2 的图片  放不下则舍弃掉  放下一张
-
-	 		if(wentThrough[xIdx + 'x' + yIdx] || wentThrough[(xIdx+1) + 'x' + yIdx]){
-	 			$(list[i]).css({display:'none'});
-	 			continue;
-	 		}
- 		}
-
- 		if(nowSizeX == 3){							// 判断 当前位置 是否 放得下 2x2 的图片  放不下则舍弃掉  放下一张
-
-	 		if(wentThrough[xIdx + 'x' + yIdx] || wentThrough[(xIdx+1) + 'x' + yIdx] || wentThrough[(xIdx+2) + 'x' + yIdx]){
-	 			$(list[i]).css({display:'none'});
-	 			continue;
-	 		}
- 		}
-
-
- 		switch($(list[i]).attr('class')){
- 			case "Normal":
- 				break;
- 			default:
- 				var area  = $(list[i]).attr('class').split('x');
- 				var	areaX = parseInt(area[0]);
- 				var areaY = parseInt(area[1]);  // 图片的宽高
- 				//  areaY 图片高度  yIdx 累积的高度  areaX图片的宽度  xIdx图片累积的宽度
- 				if((areaX+xIdx) > minSizeImageFitCount){
- 					$(list[i]).css({display:'none'});
- 					continue;
- 				}else{
- 					for(y = areaY-1; y>=0 ; y--){
- 						for(x = areaX-1; x>=0; x--){
- 							wentThrough[(x + xIdx) + 'x' + (y + yIdx)] = areaX+"x"+areaY;	//  对象 添加 属性  	表示 图片 所占的位置
- 						}
- 					}
- 					
- 				}
-
- 				
- 				$(list[i]).css({width:areaX*sizeToFitCount,height:areaY*sizeToFitCount});
- 				break;
- 		}
-
- 		$(list[i]).css({top:(yIdx*sizeToFitCount),left:(xIdx*sizeToFitCount)});
- 		xIdx ++;
-	}
-</script>
 </html>
