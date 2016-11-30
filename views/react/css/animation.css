@@ -1,0 +1,47 @@
+/**
+ *   background - color  
+ */
+
+@keyframes bgColor{
+	0%{
+		background: #af2b02;
+	}
+
+	10%{
+		background: #dc002f;
+	}	
+
+	20%{
+		background: #e603be;
+	}
+
+	30%{
+		background: #6704e3;
+	}
+	40%{
+		background: #1a01d8;
+	}
+	50%{
+		background: #033ed5;
+	}
+	60%{
+		background: #04a8bc;
+	}
+	70%{
+		background: #04bc56;
+	}
+	80%{
+		background: #43a204;
+	}
+	90%{
+		background: #7ea203;
+	}
+
+	100%{
+		background: #af2b02;
+	}
+
+}
+
+
+

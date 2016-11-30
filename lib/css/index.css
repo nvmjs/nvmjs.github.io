@@ -47,6 +47,7 @@ input[name=search]{
 .box{
 	width: 96%;
 	max-width: 98rem;
+	min-height: 50rem;
 	margin: 2rem auto;
 	font-size: 1.4rem;
 }
@@ -133,6 +134,12 @@ input[name=search]{
 }
 .list .inner table .td2 img{
 	max-width: 100%;
+}
+.list .inner table .td2 span{
+	color:#FD5711;
+}
+.list .inner table .td2 i{
+	color: #3AB4FF;
 }
 .list .inner table .padding_left{
 	padding-left: 3rem;  	
